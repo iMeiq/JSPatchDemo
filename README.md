@@ -1,12 +1,10 @@
 # JSPatchDemo
 Fix bugs without update versions
 
-Installation
+# Installation
 
-# Your Podfile
 platform :ios, '6.0'
 pod 'JSPatch'
 
-Manually
-
+# Manually
 Copy JSEngine.m JSEngine.h JSPatch.js in JSPatch/ to your project.
