@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "JPEngine.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +16,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [JPEngine startEngine];
+    NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"mq" ofType:@"js"];
+    NSString *script = [NSString stringWithContentsOfFile:sourcePath encoding:NSUTF8StringEncoding error:nil];
+    [JPEngine evaluateScript:script];
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
